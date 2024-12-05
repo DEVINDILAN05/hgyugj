@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local jquery</title>
+  </head>
+  <body>
+    <button id="viewTEXT">Tampilkan text</button>
+    <button id="hideTEXT">SembunyikanText</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt vitae voluptas earum totam voluptatum libero, facilis voluptatem ex similique magni?</p>
+
+    <script src="jquery/jquery-3.7.1.min.js"></script>
+
+    <script>
+      $( function(){
+        $('p').hide();
+        $('#hideTEXT').hide();
+        $('#viewTEXT').on('click',function(){
+            $('p').show(500);
+            $(this).hide();
+            $('#hideTEXT').show();
+        });
+        $('#hideTEXT').on('click',function(){
+            $('p').hide(500);
+            $(this).hide();
+            $('#viewTEXT').show();
+        })
+      })
+    </script>
+  </body>
+</html>
